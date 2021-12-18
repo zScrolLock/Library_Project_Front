@@ -1,3 +1,47 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="main-menu" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Main Menu</ion-title>
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item button routerLink="/books-list">
+            <ion-icon name="book-outline" slot="start"></ion-icon>
+            <ion-label> Select a new Book </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button routerLink="/fav-list">
+            <ion-icon name="heart-outline" slot="start"></ion-icon>
+            <ion-label> Favorite Books </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button routerLink="/reserved-books">
+            <ion-icon name="bag-handle-outline" slot="start"></ion-icon>
+            <ion-label> Reserved Books </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button routerLink="mail-list">
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-label> Mail </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button routerLink="user-info">
+            <ion-icon name="options-outline" slot="start"></ion-icon>
+            <ion-label> Information </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

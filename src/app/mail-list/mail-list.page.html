@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        <ion-label>Logout</ion-label>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mail Box</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  
+  <ion-list>
+    <ion-list-header>Mail box - check your new Notifications/Emails</ion-list-header>
+    <ion-item-sliding *ngFor="let mail of mailsList; let i = index" [attr.data-index]="i" >
+      <ion-item>
+        <ion-label>
+          <h2>{{mail.title}}</h2>
+          <h3>{{mail.about}}</h3>
+          <p>{{mail.message}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
